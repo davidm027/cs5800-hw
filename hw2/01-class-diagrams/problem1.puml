@@ -1,0 +1,60 @@
+@startuml
+
+Employee <|-- SalariedEmployee
+Employee <|-- HourlyEmployee
+Employee <|-- CommisionEmployee
+Employee <|-- BaseEmployee
+
+abstract class Employee {
+  - firstName: String
+  - lastName: String
+  - socialSecurityNumber: String
+
+  + getFirstName(): String
+  + setFirstName(in firstName: String): void
+  + getLastName(): String
+  + setLastName(in lastName: String): void
+  + getSocialSecurityNumber(): String
+  + setSocialSecurityNumber(in socialSecurityNumber: String): void
+  + toString(): String
+}
+
+class SalariedEmployee {
+  - weeklySalary: int
+
+  + getWeeklySalary(): int
+  + setWeeklySalary(in weeklySalary: int): int
+  + toString(): String
+}
+
+class HourlyEmployee {
+  - wage: int
+  - hoursWorked: int
+
+  + getWage(): int
+  + setWage(in wage: int): int
+  + getHoursWorked(): int
+  + setHoursWorked(in hoursWorked: int): int
+  + toString(): String
+}
+
+class CommisionEmployee {
+  - commissionRate: int
+  - grossSales: int
+
+  + getCommissionRate(): int
+  + setCommissionRate(in commissionRate: int): int
+  + getGrossSales(): int
+  + setGrossSales(in grossSales: int): int
+  + toString(): String
+}
+
+class BaseEmployee {
+  - baseSalary: int
+
+  + getBaseSalary(): int
+  + setBaseSalary(in baseSalary: int): int
+  + toString(): String
+}
+
+@enduml

@@ -1,0 +1,22 @@
+@startuml
+course o-- instructor
+course o-- textbook
+
+object "<u>instructor:Instructor</u>" as instructor {
+  firstName = "Nima"
+  lastName = "Davarpanah"
+  officeNumber = "3-2636"
+}
+
+object "<u>textbook:Textbook</u>" as textbook {
+  title = "Clean Code"
+  author = "Uncle Bob"
+  publisher = "Pearson"
+}
+
+object "<u>course:Course</u>" as course {
+  name = "CS5800"
+  instructors = [instructor]
+  textbooks = [textbook]
+}
+@enduml
